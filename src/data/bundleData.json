@@ -1,0 +1,279 @@
+{
+  "steps": [
+    {
+      "id": "cameras",
+      "stepNumber": 1,
+      "title": "Choose your cameras",
+      "icon": "camera",
+      "nextLabel": "Next: Choose your plan",
+      "products": [
+        {
+          "id": "wyze-cam-v4",
+          "name": "Wyze Cam v4",
+          "description": "Best-selling indoor/outdoor camera with color night vision",
+          "image": "/images/wyze-cam-v4.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Cameras",
+          "variants": [
+            {
+              "id": "wyze-cam-v4-white",
+              "color": "White",
+              "swatch": "#FFFFFF",
+              "price": 35.98,
+              "compareAtPrice": 45.98,
+              "image": "/images/wyze-cam-v4.png"
+            },
+            {
+              "id": "wyze-cam-v4-black",
+              "color": "Black",
+              "swatch": "#1A1A2E",
+              "price": 35.98,
+              "compareAtPrice": 45.98,
+              "image": "/images/wyze-cam-v4-black.png"
+            }
+          ]
+        },
+        {
+          "id": "wyze-cam-pan-v3",
+          "name": "Wyze Cam Pan v3",
+          "description": "360° pan and tilt coverage with motion tracking",
+          "image": "/images/wyze-cam-pan-v3.png",
+          "badge": "Save 22%",
+          "learnMoreUrl": "#",
+          "category": "Cameras",
+          "variants": [
+            {
+              "id": "wyze-cam-pan-v3-white",
+              "color": "White",
+              "swatch": "#FFFFFF",
+              "price": 33.98,
+              "compareAtPrice": 43.98,
+              "image": "/images/wyze-cam-pan-v3.png"
+            },
+            {
+              "id": "wyze-cam-pan-v3-black",
+              "color": "Black",
+              "swatch": "#1A1A2E",
+              "price": 33.98,
+              "compareAtPrice": 43.98,
+              "image": "/images/wyze-cam-pan-v3-black.png"
+            }
+          ]
+        },
+        {
+          "id": "wyze-cam-og",
+          "name": "Wyze Cam OG",
+          "description": "Compact and stealthy design with starlight sensor",
+          "image": "/images/wyze-cam-og.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Cameras",
+          "variants": [
+            {
+              "id": "wyze-cam-og-white",
+              "color": "White",
+              "swatch": "#FFFFFF",
+              "price": 19.98,
+              "compareAtPrice": 25.98,
+              "image": "/images/wyze-cam-og.png"
+            }
+          ]
+        },
+        {
+          "id": "wyze-video-doorbell-v2",
+          "name": "Wyze Video Doorbell v2",
+          "description": "See who's at the door in 2K HDR video",
+          "image": "/images/wyze-doorbell.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Cameras",
+          "variants": [
+            {
+              "id": "wyze-doorbell-v2-default",
+              "color": null,
+              "swatch": null,
+              "price": 29.98,
+              "compareAtPrice": 39.98,
+              "image": "/images/wyze-doorbell.png"
+            }
+          ]
+        },
+        {
+          "id": "wyze-battery-cam-pro",
+          "name": "Wyze Battery Cam Pro",
+          "description": "Wire-free outdoor camera with 2K resolution",
+          "image": "/images/wyze-battery-cam.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Cameras",
+          "variants": [
+            {
+              "id": "wyze-battery-cam-pro-white",
+              "color": "White",
+              "swatch": "#FFFFFF",
+              "price": 79.98,
+              "compareAtPrice": 99.98,
+              "image": "/images/wyze-battery-cam.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "stepNumber": 2,
+      "title": "Choose your plan",
+      "icon": "shield",
+      "nextLabel": "Next: Choose your sensors",
+      "products": [
+        {
+          "id": "cam-plus",
+          "name": "Cam Plus",
+          "description": "AI-powered person, pet & vehicle detection with cloud storage",
+          "image": "/images/cam-plus.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Plan",
+          "isMonthly": true,
+          "variants": [
+            {
+              "id": "cam-plus-monthly",
+              "color": null,
+              "swatch": null,
+              "price": 2.99,
+              "compareAtPrice": null,
+              "image": "/images/cam-plus.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sensors",
+      "stepNumber": 3,
+      "title": "Choose your sensors",
+      "icon": "radio",
+      "nextLabel": "Next: Add extra protection",
+      "products": [
+        {
+          "id": "entry-sensor",
+          "name": "Wyze Sense Entry Sensor",
+          "description": "Monitor doors and windows for openings",
+          "image": "/images/entry-sensor.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Sensors",
+          "variants": [
+            {
+              "id": "entry-sensor-default",
+              "color": null,
+              "swatch": null,
+              "price": 7.99,
+              "compareAtPrice": null,
+              "image": "/images/entry-sensor.png"
+            }
+          ]
+        },
+        {
+          "id": "motion-sensor",
+          "name": "Wyze Sense Motion Sensor",
+          "description": "Detect movement in rooms and hallways",
+          "image": "/images/motion-sensor.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Sensors",
+          "variants": [
+            {
+              "id": "motion-sensor-default",
+              "color": null,
+              "swatch": null,
+              "price": 8.99,
+              "compareAtPrice": null,
+              "image": "/images/motion-sensor.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "protection",
+      "stepNumber": 4,
+      "title": "Add extra protection",
+      "icon": "shield-check",
+      "nextLabel": null,
+      "products": [
+        {
+          "id": "home-monitoring",
+          "name": "Wyze Home Monitoring",
+          "description": "24/7 professional monitoring with emergency dispatch",
+          "image": "/images/home-monitoring.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Accessories",
+          "isMonthly": true,
+          "variants": [
+            {
+              "id": "home-monitoring-monthly",
+              "color": null,
+              "swatch": null,
+              "price": 5.99,
+              "compareAtPrice": null,
+              "image": "/images/home-monitoring.png"
+            }
+          ]
+        },
+        {
+          "id": "theft-protection",
+          "name": "Wyze Theft/DIY Crash/Shock",
+          "description": "Extended coverage for theft, crashes and power surges",
+          "image": "/images/theft-protection.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Accessories",
+          "variants": [
+            {
+              "id": "theft-protection-default",
+              "color": null,
+              "swatch": null,
+              "price": 4.99,
+              "compareAtPrice": null,
+              "image": "/images/theft-protection.png"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reviewPanel": {
+    "shippingLabel": "Shipping",
+    "shippingPrice": "FREE",
+    "guaranteeText": "60-Day Money-Back Guarantee",
+    "financingText": "or 4 interest-free payments of",
+    "financingProvider": "afterpay"
+  },
+  "initialSelections": {
+    "cart": {
+      "wyze-cam-v4-white": 1,
+      "wyze-cam-pan-v3-white": 1,
+      "entry-sensor-default": 2,
+      "motion-sensor-default": 1,
+      "home-monitoring-monthly": 1,
+      "theft-protection-default": 1,
+      "cam-plus-monthly": 1
+    },
+    "selectedVariants": {
+      "wyze-cam-v4": "wyze-cam-v4-white",
+      "wyze-cam-pan-v3": "wyze-cam-pan-v3-white",
+      "wyze-cam-og": "wyze-cam-og-white",
+      "wyze-video-doorbell-v2": "wyze-doorbell-v2-default",
+      "wyze-battery-cam-pro": "wyze-battery-cam-pro-white",
+      "cam-plus": "cam-plus-monthly",
+      "entry-sensor": "entry-sensor-default",
+      "motion-sensor": "motion-sensor-default",
+      "home-monitoring": "home-monitoring-monthly",
+      "theft-protection": "theft-protection-default"
+    },
+    "activeStep": 0
+  }
+}
