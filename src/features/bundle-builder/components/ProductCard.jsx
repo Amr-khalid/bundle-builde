@@ -49,10 +49,10 @@ function ProductCard({ product }) {
 
   return (
     <article
-      className={`relative flex flex-col rounded-xl border-2 bg-white p-5 transition-all ${
+      className={`relative flex flex-col rounded-xl border p-5 transition-all bg-white ${
         isSelected
-          ? 'border-primary bg-primary-light/30 shadow-sm'
-          : 'border-border hover:border-gray-300 hover:shadow-sm'
+          ? 'border-indigo-600 border-2 shadow-sm'
+          : 'border-gray-200 hover:border-gray-300'
       }`}
       aria-label={`Product: ${product.name}`}
     >
@@ -61,7 +61,7 @@ function ProductCard({ product }) {
 
       {/* Product Image */}
       <div
-        className="mb-5 flex items-center justify-center rounded-xl bg-gray-50/60 p-4"
+        className="mb-5 flex items-center justify-center p-4"
         style={{ height: '144px' }}
       >
         <img
@@ -74,7 +74,7 @@ function ProductCard({ product }) {
       </div>
 
       {/* Title & Description */}
-      <h3 className="text-[15px] font-bold tracking-tight text-text-primary">
+      <h3 className="text-[15px] font-semibold text-gray-900">
         {product.name}
       </h3>
       <p className="mt-1.5 text-xs text-text-secondary leading-relaxed line-clamp-2 min-h-[2.5rem]">
@@ -85,7 +85,7 @@ function ProductCard({ product }) {
       {product.learnMoreUrl && (
         <a
           href={product.learnMoreUrl}
-          className="mt-1.5 inline-block text-xs font-semibold text-primary hover:underline hover:text-primary-hover"
+          className="mt-1.5 inline-block text-[13px] font-semibold text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
           aria-label={`Learn more about ${product.name}`}
         >
           Learn More

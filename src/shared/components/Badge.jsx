@@ -9,7 +9,7 @@ function Badge({ text }) {
 
   return (
     <span
-      className="absolute top-2 left-2 z-10 inline-flex items-center rounded-full bg-badge-bg px-2.5 py-0.5 text-xs font-semibold text-badge-text"
+      className="absolute top-3 left-3 z-10 inline-flex items-center rounded-full bg-indigo-600 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-sm"
       aria-label={`Discount: ${text}`}
     >
       {text}

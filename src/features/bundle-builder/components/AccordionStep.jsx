@@ -54,10 +54,10 @@ function AccordionStep({ step, totalSteps }) {
   );
   return (
     <div
-      className={`overflow-hidden rounded-xl border transition-all duration-300 bg-white ${
+      className={`overflow-hidden transition-all duration-300 bg-white ${
         isOpen
-          ? 'border-primary border-l-4 border-l-primary shadow-sm'
-          : 'border-border'
+          ? 'rounded-xl border-2 border-indigo-600 shadow-md my-4'
+          : 'border-b border-gray-200'
       }`}
     >
       {/* Step Header */}
@@ -65,7 +65,9 @@ function AccordionStep({ step, totalSteps }) {
         type="button"
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        className="flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50/60"
+        className={`flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50/60 ${
+          isOpen ? 'bg-indigo-50/30' : ''
+        }`}
         aria-expanded={isOpen}
         aria-controls={`step-content-${step.id}`}
         id={`step-header-${step.id}`}
@@ -73,7 +75,7 @@ function AccordionStep({ step, totalSteps }) {
         {/* Step Icon */}
         <div
           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
-            isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary'
+            isOpen ? 'bg-indigo-600 text-white' : 'bg-transparent text-gray-500 border border-gray-300'
           }`}
         >
           <Icon size={20} />
@@ -92,14 +94,14 @@ function AccordionStep({ step, totalSteps }) {
         {/* Right: Selected count or chevron */}
         <div className="flex items-center gap-3">
           {selectedCount > 0 && (
-            <span className="rounded-full bg-primary-light px-2.5 py-0.5 text-xs font-semibold text-primary animate-fade-in">
+            <span className="text-sm font-semibold text-indigo-600 animate-fade-in">
               {selectedCount} selected
             </span>
           )}
           {isOpen ? (
-            <ChevronUp size={20} className="text-text-muted" />
+            <ChevronUp size={20} className="text-indigo-600" />
           ) : (
-            <ChevronDown size={20} className="text-text-muted" />
+            <ChevronDown size={20} className="text-gray-400" />
           )}
         </div>
       </button>
@@ -114,20 +116,22 @@ function AccordionStep({ step, totalSteps }) {
         }`}
       >
         <div className="overflow-hidden min-h-0">
-          <div className="border-t border-border px-6 pb-6 pt-5">
+          <div className="border-t border-indigo-100 px-6 pb-6 pt-5">
             {/* Product Grid */}
             <ProductGrid products={step.products} />
 
             {/* Next Button */}
             {step.nextLabel && (
-              <button
-                type="button"
-                onClick={handleNext}
-                className="mt-5 w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                aria-label={step.nextLabel}
-              >
-                {step.nextLabel}
-              </button>
+              <div className="mt-8 flex justify-center">
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className="rounded-lg border-2 border-indigo-600 bg-white px-8 py-2.5 text-[15px] font-bold text-indigo-600 transition-colors hover:bg-indigo-50 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
+                  aria-label={step.nextLabel}
+                >
+                  {step.nextLabel}
+                </button>
+              </div>
             )}
           </div>
         </div>

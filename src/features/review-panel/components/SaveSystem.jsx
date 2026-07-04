@@ -24,10 +24,9 @@ export default function SaveSystem() {
       <button
         type="button"
         onClick={handleSave}
-        className="flex w-full items-center justify-center gap-2 py-2 text-sm font-medium text-primary transition-colors hover:text-primary-hover hover:underline"
+        className="inline-block py-1 text-[13px] text-gray-600 underline underline-offset-4 transition-colors hover:text-gray-900"
         aria-label="Save my system for later"
       >
-        <Bookmark size={16} />
         Save my system for later
       </button>
 

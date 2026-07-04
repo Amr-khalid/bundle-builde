@@ -40,22 +40,22 @@ export default function ReviewPanel() {
 
   return (
     <aside
-      className="rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg lg:sticky lg:top-6"
+      className="rounded-2xl bg-slate-50 p-6 md:p-8 lg:sticky lg:top-8"
       aria-label="Your security system summary"
     >
       {/* Header */}
-      <div className="mb-6 flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-          <ShoppingCart size={22} />
-        </div>
-        <h2 className="text-xl font-bold text-text-primary">
+      <div className="mb-2">
+        <h2 className="text-xl font-bold text-gray-900">
           Your security system
         </h2>
+        <p className="mt-1 text-[13px] leading-relaxed text-gray-600 border-b border-gray-200 pb-4">
+          Review your personalized protection system designed to keep what matters most safe.
+        </p>
       </div>
 
       {/* Grouped Sections */}
       {hasItems ? (
-        <div className="space-y-3">
+        <div className="space-y-1">
           {CATEGORY_ORDER.map((category) => (
             <ReviewSection
               key={category}
@@ -85,14 +85,16 @@ export default function ReviewPanel() {
           <button
             type="button"
             onClick={handleCheckout}
-            className="mt-5 w-full rounded-lg bg-primary px-6 py-4 text-base font-bold text-white transition-all hover:bg-primary-hover hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-[0.98]"
+            className="mt-6 w-full rounded bg-indigo-700 px-6 py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-indigo-800 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
             aria-label="Proceed to checkout"
           >
             Checkout
           </button>
 
           {/* Save System */}
-          <SaveSystem />
+          <div className="mt-4 text-center">
+            <SaveSystem />
+          </div>
         </>
       )}
     </aside>
