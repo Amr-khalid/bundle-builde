@@ -60,11 +60,15 @@ function ProductCard({ product }) {
       <Badge text={product.badge} />
 
       {/* Product Image */}
-      <div className="mb-4 flex items-center justify-center rounded-xl bg-gray-50/60 p-4 h-36">
+      <div
+        className="mb-4 flex items-center justify-center rounded-xl bg-gray-50/60 p-4"
+        style={{ height: '144px' }}
+      >
         <img
           src={displayImage}
           alt={product.name}
-          className="h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+          style={{ height: '112px', width: 'auto' }}
+          className="object-contain transition-transform duration-300 hover:scale-105"
           loading="lazy"
         />
       </div>

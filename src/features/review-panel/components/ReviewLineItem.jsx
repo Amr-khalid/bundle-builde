@@ -29,11 +29,15 @@ function ReviewLineItem({ item }) {
   return (
     <div className="flex items-center gap-3 py-2.5">
       {/* Thumbnail */}
-      <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-gray-50 p-1">
+      <div
+        className="shrink-0 overflow-hidden rounded-lg bg-gray-50 p-1 flex items-center justify-center"
+        style={{ height: '40px', width: '40px' }}
+      >
         <img
           src={variant.image || product.image}
           alt={displayName}
-          className="h-full w-full object-contain"
+          style={{ height: '32px', width: '32px' }}
+          className="object-contain"
           loading="lazy"
         />
       </div>

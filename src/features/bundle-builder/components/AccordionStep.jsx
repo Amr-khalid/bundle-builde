@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useRef, useEffect, useState } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import {
   ChevronDown,
   ChevronUp,
@@ -26,9 +26,6 @@ const STEP_ICONS = {
 function AccordionStep({ step, totalSteps }) {
   const { state, setStep } = useBundle();
   const isOpen = state.activeStep === step.stepNumber - 1;
-  const contentRef = useRef(null);
-  const [contentHeight, setContentHeight] = useState(0);
-
   const selectedCount = useMemo(
     () => getSelectedCount(state.cart, step.id),
     [state.cart, step.id]
@@ -55,14 +52,6 @@ function AccordionStep({ step, totalSteps }) {
     },
     [handleToggle]
   );
-
-  // Measure content height for smooth animation
-  useEffect(() => {
-    if (contentRef.current) {
-      setContentHeight(contentRef.current.scrollHeight);
-    }
-  }, [isOpen, step.products]);
-
   return (
     <div
       className={`overflow-hidden rounded-xl border transition-all duration-300 bg-white ${
@@ -120,28 +109,27 @@ function AccordionStep({ step, totalSteps }) {
         id={`step-content-${step.id}`}
         role="region"
         aria-labelledby={`step-header-${step.id}`}
-        className="transition-all duration-300 ease-in-out"
-        style={{
-          maxHeight: isOpen ? `${contentHeight + 100}px` : '0px',
-          opacity: isOpen ? 1 : 0,
-          overflow: 'hidden',
-        }}
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
       >
-        <div ref={contentRef} className="border-t border-border px-5 pb-5 pt-4">
-          {/* Product Grid */}
-          <ProductGrid products={step.products} />
+        <div className="overflow-hidden">
+          <div className="border-t border-border px-5 pb-5 pt-4">
+            {/* Product Grid */}
+            <ProductGrid products={step.products} />
 
-          {/* Next Button */}
-          {step.nextLabel && (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="mt-5 w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              aria-label={step.nextLabel}
-            >
-              {step.nextLabel}
-            </button>
-          )}
+            {/* Next Button */}
+            {step.nextLabel && (
+              <button
+                type="button"
+                onClick={handleNext}
+                className="mt-5 w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                aria-label={step.nextLabel}
+              >
+                {step.nextLabel}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
