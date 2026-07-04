@@ -39,12 +39,12 @@ function MainApp() {
       </header>
 
       {/* Main Container */}
-      <main className="mx-auto max-w-7xl px-4 py-6 md:px-8 md:py-10">
-        <div className="mb-8">
-          <h1 className="text-2xl font-extrabold tracking-tight text-text-primary md:text-3xl">
+      <main className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-12">
+        <div className="mb-10">
+          <h1 className="text-3xl font-extrabold tracking-tight text-text-primary md:text-4xl">
             Let&apos;s get started!
           </h1>
-          <p className="mt-2 text-sm text-text-secondary md:text-base max-w-2xl">
+          <p className="mt-3 text-base text-text-secondary md:text-lg max-w-2xl leading-relaxed">
             Build your custom security system in 4 simple steps. Select cameras,
             customize your professional plan, add sensors, and choose extra
             protection.
@@ -52,14 +52,14 @@ function MainApp() {
         </div>
 
         {/* Responsive Layout Grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 lg:items-start">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12 xl:gap-16 lg:items-start">
           {/* Left Column: Builder */}
           <div className="lg:col-span-7 xl:col-span-8">
             <BundleBuilder />
           </div>
 
           {/* Right Column: Sticky Summary Panel */}
-          <div className="lg:col-span-5 xl:col-span-4 lg:sticky lg:top-6">
+          <div className="lg:col-span-5 xl:col-span-4 lg:sticky lg:top-8">
             <ReviewPanel />
           </div>
         </div>
