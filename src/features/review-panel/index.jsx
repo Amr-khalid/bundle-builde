@@ -22,15 +22,9 @@ const CATEGORY_ORDER = ['Cameras', 'Sensors', 'Accessories', 'Plan'];
 export default function ReviewPanel() {
   const { state } = useBundle();
 
-  const groupedItems = useMemo(
-    () => getGroupedItems(state.cart),
-    [state.cart]
-  );
+  const groupedItems = useMemo(() => getGroupedItems(state.cart), [state.cart]);
   const subtotal = useMemo(() => getSubtotal(state.cart), [state.cart]);
-  const compareTotal = useMemo(
-    () => getCompareTotal(state.cart),
-    [state.cart]
-  );
+  const compareTotal = useMemo(() => getCompareTotal(state.cart), [state.cart]);
   const savings = useMemo(() => getSavings(state.cart), [state.cart]);
 
   const handleCheckout = useCallback(() => {
