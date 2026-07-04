@@ -50,15 +50,15 @@ export default function ReviewSummary({
 
       {/* Total */}
       <div className="flex items-center justify-between pt-1">
-        <span className="text-base font-bold text-text-primary">Total</span>
+        <span className="text-lg font-bold text-text-primary">Total</span>
         <div className="flex items-end flex-col">
           <div className="flex items-center gap-2">
             {hasSavings && (
-              <span className="text-xs text-text-muted line-through">
+              <span className="text-sm text-text-muted line-through">
                 {formatCurrency(compareTotal)}
               </span>
             )}
-            <span className="text-xl font-extrabold text-primary">
+            <span className="text-2xl font-extrabold text-primary">
               {formatCurrency(subtotal)}
             </span>
           </div>

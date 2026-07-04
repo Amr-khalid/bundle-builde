@@ -27,16 +27,16 @@ function ReviewLineItem({ item }) {
     : product.name;
 
   return (
-    <div className="flex items-center gap-3 py-2.5">
+    <div className="flex items-center gap-3 py-3">
       {/* Thumbnail */}
       <div
         className="shrink-0 overflow-hidden rounded-lg bg-gray-50 p-1 flex items-center justify-center"
-        style={{ height: '40px', width: '40px' }}
+        style={{ height: '48px', width: '48px' }}
       >
         <img
           src={variant.image || product.image}
           alt={displayName}
-          style={{ height: '32px', width: '32px' }}
+          style={{ height: '40px', width: '40px' }}
           className="object-contain"
           loading="lazy"
         />
@@ -44,7 +44,7 @@ function ReviewLineItem({ item }) {
 
       {/* Name */}
       <div className="flex-1 min-w-0">
-        <p className="truncate text-sm font-medium text-text-primary">
+        <p className="truncate text-[15px] font-semibold text-text-primary">
           {displayName}
         </p>
       </div>
@@ -59,7 +59,7 @@ function ReviewLineItem({ item }) {
       />
 
       {/* Price */}
-      <span className="ml-2 min-w-[60px] text-right text-sm font-semibold text-text-primary tabular-nums">
+      <span className="ml-2 min-w-[64px] text-right text-[15px] font-bold text-text-primary tabular-nums">
         {formatCurrency(linePrice)}
       </span>
     </div>

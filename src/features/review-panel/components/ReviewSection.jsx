@@ -9,7 +9,7 @@ export default function ReviewSection({ title, items }) {
 
   return (
     <div className="border-b border-border pb-2">
-      <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-text-muted">
+      <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-text-muted">
         {title}
       </h3>
       <div>

@@ -40,22 +40,22 @@ export default function ReviewPanel() {
 
   return (
     <aside
-      className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition-shadow duration-300 hover:shadow-lg lg:sticky lg:top-6"
+      className="rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg lg:sticky lg:top-6"
       aria-label="Your security system summary"
     >
       {/* Header */}
-      <div className="mb-4 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
-          <ShoppingCart size={20} />
+      <div className="mb-6 flex items-center gap-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
+          <ShoppingCart size={22} />
         </div>
-        <h2 className="text-lg font-bold text-text-primary">
+        <h2 className="text-xl font-bold text-text-primary">
           Your security system
         </h2>
       </div>
 
       {/* Grouped Sections */}
       {hasItems ? (
-        <div className="space-y-2">
+        <div className="space-y-3">
           {CATEGORY_ORDER.map((category) => (
             <ReviewSection
               key={category}
@@ -65,7 +65,7 @@ export default function ReviewPanel() {
           ))}
         </div>
       ) : (
-        <div className="py-8 text-center text-sm text-text-muted">
+        <div className="py-8 text-center text-[15px] text-text-muted">
           <p>No items selected yet.</p>
           <p className="mt-1">Start building your system above!</p>
         </div>
@@ -85,7 +85,7 @@ export default function ReviewPanel() {
           <button
             type="button"
             onClick={handleCheckout}
-            className="mt-4 w-full rounded-lg bg-primary px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-hover hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-[0.98]"
+            className="mt-5 w-full rounded-lg bg-primary px-6 py-4 text-base font-bold text-white transition-all hover:bg-primary-hover hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-[0.98]"
             aria-label="Proceed to checkout"
           >
             Checkout
