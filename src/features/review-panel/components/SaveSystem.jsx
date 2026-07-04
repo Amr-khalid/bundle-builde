@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Bookmark } from 'lucide-react';
 import { useBundle } from '../../../context/BundleContext';
 import { usePersistBundle } from '../../../shared/hooks/usePersistBundle';
