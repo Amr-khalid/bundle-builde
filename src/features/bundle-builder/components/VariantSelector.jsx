@@ -16,7 +16,11 @@ function VariantSelector({ variants, activeVariantId, onSelect }) {
   }
 
   return (
-    <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Color options">
+    <div
+      className="flex flex-wrap gap-2"
+      role="radiogroup"
+      aria-label="Color options"
+    >
       {variants.map((variant) => {
         const isActive = variant.id === activeVariantId;
         return (

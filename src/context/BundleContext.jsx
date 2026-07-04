@@ -138,6 +138,7 @@ export function BundleProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useBundle() {
   const context = useContext(BundleContext);
   if (!context) {
@@ -145,5 +146,3 @@ export function useBundle() {
   }
   return context;
 }
-
-export { ACTIONS };

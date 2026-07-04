@@ -15,7 +15,9 @@ function ProductCard({ product }) {
 
   const activeVariantId = state.selectedVariants[product.id];
   const activeVariant = useMemo(
-    () => product.variants.find((v) => v.id === activeVariantId) || product.variants[0],
+    () =>
+      product.variants.find((v) => v.id === activeVariantId) ||
+      product.variants[0],
     [product.variants, activeVariantId]
   );
 
@@ -68,7 +70,9 @@ function ProductCard({ product }) {
       </div>
 
       {/* Title & Description */}
-      <h3 className="text-sm font-semibold text-text-primary">{product.name}</h3>
+      <h3 className="text-sm font-semibold text-text-primary">
+        {product.name}
+      </h3>
       <p className="mt-1 text-xs text-text-secondary leading-relaxed">
         {product.description}
       </p>
