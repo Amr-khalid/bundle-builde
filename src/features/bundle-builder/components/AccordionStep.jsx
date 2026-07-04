@@ -64,20 +64,26 @@ function AccordionStep({ step, totalSteps }) {
   }, [isOpen, step.products]);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-white">
+    <div
+      className={`overflow-hidden rounded-xl border transition-all duration-300 bg-white ${
+        isOpen
+          ? 'border-primary border-l-4 border-l-primary shadow-sm'
+          : 'border-border'
+      }`}
+    >
       {/* Step Header */}
       <button
         type="button"
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        className="flex w-full items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50/60"
         aria-expanded={isOpen}
         aria-controls={`step-content-${step.id}`}
         id={`step-header-${step.id}`}
       >
         {/* Step Icon */}
         <div
-          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
             isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-text-secondary'
           }`}
         >
@@ -86,7 +92,7 @@ function AccordionStep({ step, totalSteps }) {
 
         {/* Step Info */}
         <div className="flex-1">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-text-muted">
             Step {step.stepNumber} of {totalSteps}
           </span>
           <h2 className="text-base font-semibold text-text-primary">
@@ -95,9 +101,9 @@ function AccordionStep({ step, totalSteps }) {
         </div>
 
         {/* Right: Selected count or chevron */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           {selectedCount > 0 && (
-            <span className="text-sm font-medium text-primary">
+            <span className="rounded-full bg-primary-light px-2.5 py-0.5 text-xs font-semibold text-primary animate-fade-in">
               {selectedCount} selected
             </span>
           )}

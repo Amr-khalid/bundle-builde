@@ -40,7 +40,7 @@ export default function ReviewPanel() {
 
   return (
     <aside
-      className="rounded-xl border border-border bg-white p-5 lg:sticky lg:top-6"
+      className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition-shadow duration-300 hover:shadow-lg lg:sticky lg:top-6"
       aria-label="Your security system summary"
     >
       {/* Header */}

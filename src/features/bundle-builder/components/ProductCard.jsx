@@ -60,20 +60,20 @@ function ProductCard({ product }) {
       <Badge text={product.badge} />
 
       {/* Product Image */}
-      <div className="mb-3 flex items-center justify-center py-2">
+      <div className="mb-4 flex items-center justify-center rounded-xl bg-gray-50/60 p-4 h-36">
         <img
           src={displayImage}
           alt={product.name}
-          className="h-24 w-auto object-contain"
+          className="h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
           loading="lazy"
         />
       </div>
 
       {/* Title & Description */}
-      <h3 className="text-sm font-semibold text-text-primary">
+      <h3 className="text-sm font-bold tracking-tight text-text-primary">
         {product.name}
       </h3>
-      <p className="mt-1 text-xs text-text-secondary leading-relaxed">
+      <p className="mt-1 text-xs text-text-secondary leading-relaxed line-clamp-2 min-h-[2.5rem]">
         {product.description}
       </p>
 
@@ -81,7 +81,7 @@ function ProductCard({ product }) {
       {product.learnMoreUrl && (
         <a
           href={product.learnMoreUrl}
-          className="mt-1.5 inline-block text-xs font-medium text-primary hover:underline"
+          className="mt-1 inline-block text-xs font-semibold text-primary hover:underline hover:text-primary-hover"
           aria-label={`Learn more about ${product.name}`}
         >
           Learn More

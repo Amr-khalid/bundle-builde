@@ -52,7 +52,7 @@ function MainApp() {
         </div>
 
         {/* Responsive Layout Grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 lg:items-start">
           {/* Left Column: Builder */}
           <div className="lg:col-span-7 xl:col-span-8">
             <BundleBuilder />

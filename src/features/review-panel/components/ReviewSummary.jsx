@@ -28,46 +28,48 @@ export default function ReviewSummary({
       </div>
 
       {/* Guarantee */}
-      <div className="flex items-center gap-2 rounded-lg bg-green-50 px-3 py-2 text-xs text-success">
-        <Shield size={14} />
-        <span className="font-medium">{reviewPanelData.guaranteeText}</span>
+      <div className="flex items-center gap-2.5 rounded-xl bg-emerald-50/60 border border-emerald-100/50 px-4 py-2.5 text-xs text-emerald-800">
+        <Shield size={15} className="text-emerald-600 shrink-0" />
+        <span className="font-semibold">{reviewPanelData.guaranteeText}</span>
       </div>
 
       {/* Financing */}
-      <p className="text-center text-xs text-text-secondary">
-        {reviewPanelData.financingText}{' '}
-        <span className="font-semibold text-text-primary">
+      <div className="flex items-center justify-center gap-1.5 rounded-xl bg-gray-50/80 border border-gray-100/80 px-4 py-2 text-xs text-text-secondary">
+        <span>{reviewPanelData.financingText}</span>
+        <span className="font-bold text-text-primary">
           {formatCurrency(installmentAmount)}
-        </span>{' '}
-        with{' '}
-        <span className="font-semibold capitalize">
+        </span>
+        <span>with</span>
+        <span className="inline-flex items-center rounded bg-[#B2F5EA]/35 px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-[#00A389]">
           {reviewPanelData.financingProvider}
         </span>
-      </p>
+      </div>
 
       {/* Divider */}
-      <div className="border-t border-border" />
+      <div className="border-t border-gray-100 my-2" />
 
       {/* Total */}
-      <div className="flex items-center justify-between">
-        <span className="text-base font-semibold text-text-primary">Total</span>
-        <div className="flex items-center gap-2">
-          {hasSavings && (
-            <span className="text-sm text-text-muted line-through">
-              {formatCurrency(compareTotal)}
+      <div className="flex items-center justify-between pt-1">
+        <span className="text-base font-bold text-text-primary">Total</span>
+        <div className="flex items-end flex-col">
+          <div className="flex items-center gap-2">
+            {hasSavings && (
+              <span className="text-xs text-text-muted line-through">
+                {formatCurrency(compareTotal)}
+              </span>
+            )}
+            <span className="text-xl font-extrabold text-primary">
+              {formatCurrency(subtotal)}
             </span>
-          )}
-          <span className="text-lg font-bold text-primary">
-            {formatCurrency(subtotal)}
-          </span>
+          </div>
         </div>
       </div>
 
       {/* Savings */}
       {hasSavings && (
-        <p className="text-center text-sm font-semibold text-success">
-          🎉 You&apos;re saving {formatCurrency(savings)}!
-        </p>
+        <div className="rounded-xl bg-emerald-50 px-4 py-2 text-center text-xs font-bold text-emerald-800 border border-emerald-100/40">
+          🎉 You&apos;re saving {formatCurrency(savings)} on this bundle!
+        </div>
       )}
     </div>
   );
