@@ -1,4 +1,4 @@
-import bundleData from '../data/bundleData.json';
+import bundleData from '../../data/bundleData.json';
 
 /**
  * Build a flat lookup: variantId → { variant, product, step }
