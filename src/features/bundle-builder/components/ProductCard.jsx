@@ -49,7 +49,7 @@ function ProductCard({ product }) {
 
   return (
     <article
-      className={`relative flex flex-col rounded-xl border-2 bg-white p-4 transition-all ${
+      className={`relative flex flex-col rounded-xl border-2 bg-white p-5 transition-all ${
         isSelected
           ? 'border-primary bg-primary-light/30 shadow-sm'
           : 'border-border hover:border-gray-300 hover:shadow-sm'
@@ -61,7 +61,7 @@ function ProductCard({ product }) {
 
       {/* Product Image */}
       <div
-        className="mb-4 flex items-center justify-center rounded-xl bg-gray-50/60 p-4"
+        className="mb-5 flex items-center justify-center rounded-xl bg-gray-50/60 p-4"
         style={{ height: '144px' }}
       >
         <img
@@ -74,10 +74,10 @@ function ProductCard({ product }) {
       </div>
 
       {/* Title & Description */}
-      <h3 className="text-sm font-bold tracking-tight text-text-primary">
+      <h3 className="text-[15px] font-bold tracking-tight text-text-primary">
         {product.name}
       </h3>
-      <p className="mt-1 text-xs text-text-secondary leading-relaxed line-clamp-2 min-h-[2.5rem]">
+      <p className="mt-1.5 text-xs text-text-secondary leading-relaxed line-clamp-2 min-h-[2.5rem]">
         {product.description}
       </p>
 
@@ -85,7 +85,7 @@ function ProductCard({ product }) {
       {product.learnMoreUrl && (
         <a
           href={product.learnMoreUrl}
-          className="mt-1 inline-block text-xs font-semibold text-primary hover:underline hover:text-primary-hover"
+          className="mt-1.5 inline-block text-xs font-semibold text-primary hover:underline hover:text-primary-hover"
           aria-label={`Learn more about ${product.name}`}
         >
           Learn More
@@ -93,7 +93,7 @@ function ProductCard({ product }) {
       )}
 
       {/* Spacer to push bottom content down */}
-      <div className="mt-auto pt-3">
+      <div className="mt-auto pt-5">
         {/* Variant Selector */}
         <VariantSelector
           variants={product.variants}
@@ -102,7 +102,7 @@ function ProductCard({ product }) {
         />
 
         {/* Quantity + Price Row */}
-        <div className="mt-3 flex items-center justify-between gap-2">
+        <div className="mt-4 flex items-center justify-between gap-2">
           <QuantityStepper
             quantity={currentQuantity}
             onIncrement={handleIncrement}

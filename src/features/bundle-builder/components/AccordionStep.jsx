@@ -65,7 +65,7 @@ function AccordionStep({ step, totalSteps }) {
         type="button"
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        className="flex w-full items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50/60"
+        className="flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50/60"
         aria-expanded={isOpen}
         aria-controls={`step-content-${step.id}`}
         id={`step-header-${step.id}`}
@@ -84,7 +84,7 @@ function AccordionStep({ step, totalSteps }) {
           <span className="text-[11px] font-bold uppercase tracking-wider text-text-muted">
             Step {step.stepNumber} of {totalSteps}
           </span>
-          <h2 className="text-base font-semibold text-text-primary">
+          <h2 className="text-lg font-semibold text-text-primary mt-0.5">
             {step.title}
           </h2>
         </div>
@@ -113,8 +113,8 @@ function AccordionStep({ step, totalSteps }) {
           isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
         }`}
       >
-        <div className="overflow-hidden">
-          <div className="border-t border-border px-5 pb-5 pt-4">
+        <div className="overflow-hidden min-h-0">
+          <div className="border-t border-border px-6 pb-6 pt-5">
             {/* Product Grid */}
             <ProductGrid products={step.products} />
 
