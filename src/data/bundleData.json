@@ -10,9 +10,9 @@
         {
           "id": "wyze-cam-v4",
           "name": "Wyze Cam v4",
-          "description": "Best-selling indoor/outdoor camera with color night vision",
+          "description": "The clearest Wyze Cam ever made.",
           "image": "/images/wyze-cam-v4.png",
-          "badge": null,
+          "badge": "Save 22%",
           "learnMoreUrl": "#",
           "category": "Cameras",
           "variants": [
@@ -20,16 +20,24 @@
               "id": "wyze-cam-v4-white",
               "color": "White",
               "swatch": "#FFFFFF",
-              "price": 35.98,
-              "compareAtPrice": 45.98,
+              "price": 27.98,
+              "compareAtPrice": 35.98,
+              "image": "/images/wyze-cam-v4.png"
+            },
+            {
+              "id": "wyze-cam-v4-grey",
+              "color": "Grey",
+              "swatch": "#9CA3AF",
+              "price": 27.98,
+              "compareAtPrice": 35.98,
               "image": "/images/wyze-cam-v4.png"
             },
             {
               "id": "wyze-cam-v4-black",
               "color": "Black",
               "swatch": "#1A1A2E",
-              "price": 35.98,
-              "compareAtPrice": 45.98,
+              "price": 27.98,
+              "compareAtPrice": 35.98,
               "image": "/images/wyze-cam-v4-black.png"
             }
           ]
@@ -37,9 +45,9 @@
         {
           "id": "wyze-cam-pan-v3",
           "name": "Wyze Cam Pan v3",
-          "description": "360° pan and tilt coverage with motion tracking",
+          "description": "360° pan and 180° tilt security camera.",
           "image": "/images/wyze-cam-pan-v3.png",
-          "badge": "Save 22%",
+          "badge": "Save 12%",
           "learnMoreUrl": "#",
           "category": "Cameras",
           "variants": [
@@ -47,54 +55,70 @@
               "id": "wyze-cam-pan-v3-white",
               "color": "White",
               "swatch": "#FFFFFF",
-              "price": 33.98,
-              "compareAtPrice": 43.98,
+              "price": 34.98,
+              "compareAtPrice": 39.98,
               "image": "/images/wyze-cam-pan-v3.png"
             },
             {
               "id": "wyze-cam-pan-v3-black",
               "color": "Black",
               "swatch": "#1A1A2E",
-              "price": 33.98,
-              "compareAtPrice": 43.98,
+              "price": 34.98,
+              "compareAtPrice": 39.98,
               "image": "/images/wyze-cam-pan-v3-black.png"
             }
           ]
         },
         {
-          "id": "wyze-cam-og",
-          "name": "Wyze Cam OG",
-          "description": "Compact and stealthy design with starlight sensor",
-          "image": "/images/wyze-cam-og.png",
-          "badge": null,
+          "id": "wyze-cam-floodlight-v2",
+          "name": "Wyze Cam Floodlight v2",
+          "description": "2K floodlight camera with a 160° wide-angle view for your garage.",
+          "image": "/images/wyze-cam-floodlight-v2.png",
+          "badge": "Save 22%",
           "learnMoreUrl": "#",
           "category": "Cameras",
           "variants": [
             {
-              "id": "wyze-cam-og-white",
+              "id": "wyze-cam-floodlight-v2-white",
               "color": "White",
               "swatch": "#FFFFFF",
-              "price": 19.98,
-              "compareAtPrice": 25.98,
-              "image": "/images/wyze-cam-og.png"
+              "price": 69.98,
+              "compareAtPrice": 89.98,
+              "image": "/images/wyze-cam-floodlight-v2.png"
+            },
+            {
+              "id": "wyze-cam-floodlight-v2-black",
+              "color": "Black",
+              "swatch": "#1A1A2E",
+              "price": 69.98,
+              "compareAtPrice": 89.98,
+              "image": "/images/wyze-cam-floodlight-v2-black.png"
             }
           ]
         },
         {
-          "id": "wyze-video-doorbell-v2",
-          "name": "Wyze Video Doorbell v2",
-          "description": "See who's at the door in 2K HDR video",
-          "image": "/images/wyze-doorbell.png",
+          "id": "wyze-duo-cam-doorbell",
+          "name": "Wyze Duo Cam Doorbell",
+          "description": "Two cameras. Two views. Double the porch protection.",
+          "image": "/images/wyze-duo-cam-doorbell-white.png",
           "badge": null,
           "learnMoreUrl": "#",
           "category": "Cameras",
           "variants": [
             {
-              "id": "wyze-doorbell-v2-default",
-              "color": null,
-              "swatch": null,
-              "price": 29.98,
-              "compareAtPrice": 39.98,
+              "id": "wyze-duo-cam-doorbell-white",
+              "color": "White",
+              "swatch": "#FFFFFF",
+              "price": 69.98,
+              "compareAtPrice": null,
+              "image": "/images/wyze-duo-cam-doorbell-white.png"
+            },
+            {
+              "id": "wyze-duo-cam-doorbell-black",
+              "color": "Black",
+              "swatch": "#1A1A2E",
+              "price": 69.98,
+              "compareAtPrice": null,
               "image": "/images/wyze-doorbell.png"
             }
           ]
@@ -102,7 +126,7 @@
         {
           "id": "wyze-battery-cam-pro",
           "name": "Wyze Battery Cam Pro",
-          "description": "Wire-free outdoor camera with 2K resolution",
+          "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
           "image": "/images/wyze-battery-cam.png",
           "badge": null,
           "learnMoreUrl": "#",
@@ -112,9 +136,17 @@
               "id": "wyze-battery-cam-pro-white",
               "color": "White",
               "swatch": "#FFFFFF",
-              "price": 79.98,
-              "compareAtPrice": 99.98,
+              "price": 89.98,
+              "compareAtPrice": null,
               "image": "/images/wyze-battery-cam.png"
+            },
+            {
+              "id": "wyze-battery-cam-pro-black",
+              "color": "Black",
+              "swatch": "#1A1A2E",
+              "price": 89.98,
+              "compareAtPrice": null,
+              "image": "/images/wyze-battery-cam-pro-black.png"
             }
           ]
         }
@@ -128,9 +160,9 @@
       "nextLabel": "Next: Choose your sensors",
       "products": [
         {
-          "id": "cam-plus",
-          "name": "Cam Plus",
-          "description": "AI-powered person, pet & vehicle detection with cloud storage",
+          "id": "cam-unlimited",
+          "name": "Cam Unlimited",
+          "description": "AI-powered person, pet & vehicle detection with unlimited cloud storage",
           "image": "/images/cam-plus.png",
           "badge": null,
           "learnMoreUrl": "#",
@@ -138,11 +170,11 @@
           "isMonthly": true,
           "variants": [
             {
-              "id": "cam-plus-monthly",
+              "id": "cam-unlimited-monthly",
               "color": null,
               "swatch": null,
-              "price": 2.99,
-              "compareAtPrice": null,
+              "price": 9.99,
+              "compareAtPrice": 12.99,
               "image": "/images/cam-plus.png"
             }
           ]
@@ -157,25 +189,6 @@
       "nextLabel": "Next: Add extra protection",
       "products": [
         {
-          "id": "entry-sensor",
-          "name": "Wyze Sense Entry Sensor",
-          "description": "Monitor doors and windows for openings",
-          "image": "/images/entry-sensor.png",
-          "badge": null,
-          "learnMoreUrl": "#",
-          "category": "Sensors",
-          "variants": [
-            {
-              "id": "entry-sensor-default",
-              "color": null,
-              "swatch": null,
-              "price": 7.99,
-              "compareAtPrice": null,
-              "image": "/images/entry-sensor.png"
-            }
-          ]
-        },
-        {
           "id": "motion-sensor",
           "name": "Wyze Sense Motion Sensor",
           "description": "Detect movement in rooms and hallways",
@@ -188,9 +201,29 @@
               "id": "motion-sensor-default",
               "color": null,
               "swatch": null,
-              "price": 8.99,
+              "price": 29.99,
               "compareAtPrice": null,
               "image": "/images/motion-sensor.png"
+            }
+          ]
+        },
+        {
+          "id": "sense-hub",
+          "name": "Wyze Sense Hub",
+          "description": "Required hub for all Wyze sensors",
+          "image": "/images/entry-sensor.png",
+          "badge": null,
+          "learnMoreUrl": "#",
+          "category": "Sensors",
+          "isRequired": true,
+          "variants": [
+            {
+              "id": "sense-hub-default",
+              "color": null,
+              "swatch": null,
+              "price": 0,
+              "compareAtPrice": 29.92,
+              "image": "/images/entry-sensor.png"
             }
           ]
         }
@@ -204,39 +237,19 @@
       "nextLabel": null,
       "products": [
         {
-          "id": "home-monitoring",
-          "name": "Wyze Home Monitoring",
-          "description": "24/7 professional monitoring with emergency dispatch",
-          "image": "/images/home-monitoring.png",
-          "badge": null,
-          "learnMoreUrl": "#",
-          "category": "Accessories",
-          "isMonthly": true,
-          "variants": [
-            {
-              "id": "home-monitoring-monthly",
-              "color": null,
-              "swatch": null,
-              "price": 5.99,
-              "compareAtPrice": null,
-              "image": "/images/home-monitoring.png"
-            }
-          ]
-        },
-        {
-          "id": "theft-protection",
-          "name": "Wyze Theft/DIY Crash/Shock",
-          "description": "Extended coverage for theft, crashes and power surges",
+          "id": "microsd-card",
+          "name": "Wyze MicroSD Card (256GB)",
+          "description": "Expand your local storage for continuous recording",
           "image": "/images/theft-protection.png",
           "badge": null,
           "learnMoreUrl": "#",
           "category": "Accessories",
           "variants": [
             {
-              "id": "theft-protection-default",
+              "id": "microsd-card-default",
               "color": null,
               "swatch": null,
-              "price": 4.99,
+              "price": 20.98,
               "compareAtPrice": null,
               "image": "/images/theft-protection.png"
             }
@@ -246,33 +259,32 @@
     }
   ],
   "reviewPanel": {
-    "shippingLabel": "Shipping",
+    "shippingLabel": "Fast Shipping",
     "shippingPrice": "FREE",
-    "guaranteeText": "60-Day Money-Back Guarantee",
-    "financingText": "or 4 interest-free payments of",
+    "shippingComparePrice": "$5.99",
+    "guaranteeText": "100% Wyze satisfaction guarantee",
+    "financingText": "as low as",
     "financingProvider": "afterpay"
   },
   "initialSelections": {
     "cart": {
       "wyze-cam-v4-white": 1,
-      "wyze-cam-pan-v3-white": 1,
-      "entry-sensor-default": 2,
-      "motion-sensor-default": 1,
-      "home-monitoring-monthly": 1,
-      "theft-protection-default": 1,
-      "cam-plus-monthly": 1
+      "wyze-cam-pan-v3-white": 2,
+      "motion-sensor-default": 2,
+      "sense-hub-default": 1,
+      "microsd-card-default": 2,
+      "cam-unlimited-monthly": 1
     },
     "selectedVariants": {
       "wyze-cam-v4": "wyze-cam-v4-white",
       "wyze-cam-pan-v3": "wyze-cam-pan-v3-white",
-      "wyze-cam-og": "wyze-cam-og-white",
-      "wyze-video-doorbell-v2": "wyze-doorbell-v2-default",
+      "wyze-cam-floodlight-v2": "wyze-cam-floodlight-v2-white",
+      "wyze-duo-cam-doorbell": "wyze-duo-cam-doorbell-white",
       "wyze-battery-cam-pro": "wyze-battery-cam-pro-white",
-      "cam-plus": "cam-plus-monthly",
-      "entry-sensor": "entry-sensor-default",
+      "cam-unlimited": "cam-unlimited-monthly",
       "motion-sensor": "motion-sensor-default",
-      "home-monitoring": "home-monitoring-monthly",
-      "theft-protection": "theft-protection-default"
+      "sense-hub": "sense-hub-default",
+      "microsd-card": "microsd-card-default"
     },
     "activeStep": 0
   }

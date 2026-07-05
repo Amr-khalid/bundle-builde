@@ -1,12 +1,5 @@
 import { memo, useCallback, useMemo } from 'react';
-import {
-  ChevronDown,
-  ChevronUp,
-  Camera,
-  Shield,
-  Radio,
-  ShieldCheck,
-} from 'lucide-react';
+import { Camera, Shield, Radio, ShieldCheck } from 'lucide-react';
 import { useBundle } from '../../../context/BundleContext';
 import { getSelectedCount } from '../selectors';
 import ProductGrid from './ProductGrid';
@@ -19,9 +12,11 @@ const STEP_ICONS = {
 };
 
 /**
- * AccordionStep component.
- * Contains step header with label, icon, title, selected counter, and chevron.
- * Expandable body with product grid and "Next" button.
+ * AccordionStep component — matches Figma design.
+ * "STEP X OF 4" label above a horizontal rule.
+ * Expandable body with light blue/lavender background and indigo border.
+ * Collapsed steps show just icon + title + "N selected" with divider below.
+ * Uses filled triangle ▲/▼ instead of chevron icons.
  */
 function AccordionStep({ step, totalSteps }) {
   const { state, setStep } = useBundle();
@@ -52,87 +47,94 @@ function AccordionStep({ step, totalSteps }) {
     },
     [handleToggle]
   );
+
   return (
-    <div
-      className={`overflow-hidden transition-all duration-300 bg-white ${
-        isOpen
-          ? 'rounded-xl border-2 border-indigo-600 shadow-md my-4'
-          : 'border-b border-gray-200'
-      }`}
-    >
-      {/* Step Header */}
-      <button
-        type="button"
-        onClick={handleToggle}
-        onKeyDown={handleKeyDown}
-        className={`flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-gray-50/60 ${
-          isOpen ? 'bg-indigo-50/30' : ''
+    <div>
+      {/* Step Info Label */}
+      <div className="border-t border-gray-300 pt-3 pb-1 px-1">
+        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-gray-400">
+          Step {step.stepNumber} of {totalSteps}
+        </span>
+      </div>
+
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen
+            ? 'rounded-xl border-2 border-[#5c35e0] bg-[#f4f6fa] shadow-sm'
+            : 'bg-white border-b border-gray-200'
         }`}
-        aria-expanded={isOpen}
-        aria-controls={`step-content-${step.id}`}
-        id={`step-header-${step.id}`}
       >
-        {/* Step Icon */}
+        {/* Step Header */}
+        <button
+          type="button"
+          onClick={handleToggle}
+          onKeyDown={handleKeyDown}
+          className={`flex w-full items-center gap-4 px-5 py-4 text-left transition-colors ${
+            isOpen ? '' : 'hover:bg-gray-50/60'
+          }`}
+          aria-expanded={isOpen}
+          aria-controls={`step-content-${step.id}`}
+          id={`step-header-${step.id}`}
+        >
+          {/* Step Icon */}
+          <div
+            className={`flex h-8 w-8 shrink-0 items-center justify-center transition-colors duration-300 ${
+              isOpen ? 'text-gray-700' : 'text-gray-400'
+            }`}
+          >
+            <Icon size={24} strokeWidth={1.5} />
+          </div>
+
+          {/* Step Title */}
+          <div className="flex-1">
+            <h2 className="text-[20px] font-bold text-gray-900">
+              {step.title}
+            </h2>
+          </div>
+
+          {/* Right: Selected count + triangle */}
+          <div className="flex items-center gap-3">
+            {selectedCount > 0 && (
+              <span className="text-[14px] font-semibold text-[#5c35e0]">
+                {selectedCount} selected
+              </span>
+            )}
+            <span
+              className={`text-[10px] ${isOpen ? 'text-[#5c35e0]' : 'text-gray-400'}`}
+            >
+              {isOpen ? '▲' : '▼'}
+            </span>
+          </div>
+        </button>
+
+        {/* Expandable Content */}
         <div
-          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
-            isOpen ? 'bg-indigo-600 text-white' : 'bg-transparent text-gray-500 border border-gray-300'
+          id={`step-content-${step.id}`}
+          role="region"
+          aria-labelledby={`step-header-${step.id}`}
+          className={`grid transition-all duration-300 ease-in-out ${
+            isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
           }`}
         >
-          <Icon size={20} />
-        </div>
+          <div className="overflow-hidden min-h-0">
+            <div className="px-5 pb-6 pt-2">
+              {/* Product Grid */}
+              <ProductGrid products={step.products} />
 
-        {/* Step Info */}
-        <div className="flex-1">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-text-muted">
-            Step {step.stepNumber} of {totalSteps}
-          </span>
-          <h2 className="text-lg font-semibold text-text-primary mt-0.5">
-            {step.title}
-          </h2>
-        </div>
-
-        {/* Right: Selected count or chevron */}
-        <div className="flex items-center gap-3">
-          {selectedCount > 0 && (
-            <span className="text-sm font-semibold text-indigo-600 animate-fade-in">
-              {selectedCount} selected
-            </span>
-          )}
-          {isOpen ? (
-            <ChevronUp size={20} className="text-indigo-600" />
-          ) : (
-            <ChevronDown size={20} className="text-gray-400" />
-          )}
-        </div>
-      </button>
-
-      {/* Expandable Content */}
-      <div
-        id={`step-content-${step.id}`}
-        role="region"
-        aria-labelledby={`step-header-${step.id}`}
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-        }`}
-      >
-        <div className="overflow-hidden min-h-0">
-          <div className="border-t border-indigo-100 px-6 pb-6 pt-5">
-            {/* Product Grid */}
-            <ProductGrid products={step.products} />
-
-            {/* Next Button */}
-            {step.nextLabel && (
-              <div className="mt-8 flex justify-center">
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className="rounded-lg border-2 border-indigo-600 bg-white px-8 py-2.5 text-[15px] font-bold text-indigo-600 transition-colors hover:bg-indigo-50 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
-                  aria-label={step.nextLabel}
-                >
-                  {step.nextLabel}
-                </button>
-              </div>
-            )}
+              {/* Next Button */}
+              {step.nextLabel && (
+                <div className="mt-8 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="rounded-lg border-2 border-[#5c35e0] bg-white px-10 py-3 text-[15px] font-bold text-[#5c35e0] transition-colors hover:bg-[#f0ebff] focus-visible:ring-2 focus-visible:ring-[#5c35e0] focus-visible:ring-offset-2"
+                    aria-label={step.nextLabel}
+                  >
+                    {step.nextLabel}
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

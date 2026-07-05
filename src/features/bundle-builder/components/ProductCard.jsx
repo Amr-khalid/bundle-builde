@@ -6,9 +6,9 @@ import VariantSelector from './VariantSelector';
 import { formatCurrency } from '../../../shared/utils/formatCurrency';
 
 /**
- * Product card component.
- * Displays product image, info, variant selector, quantity stepper, and pricing.
- * Selected state (qty > 0) shows highlighted border.
+ * Product card component — horizontal layout per Figma.
+ * Image on the left, content (name, description, learn more, variants, stepper + price) on the right.
+ * Selected state (qty > 0) shows blue/indigo border.
  */
 function ProductCard({ product }) {
   const { state, increment, decrement, selectVariant } = useBundle();
@@ -49,9 +49,9 @@ function ProductCard({ product }) {
 
   return (
     <article
-      className={`relative flex flex-col rounded-xl border p-5 transition-all bg-white ${
+      className={`relative flex flex-row rounded-xl border bg-white transition-all ${
         isSelected
-          ? 'border-indigo-600 border-2 shadow-sm'
+          ? 'border-[#5c35e0] border-2 shadow-sm'
           : 'border-gray-200 hover:border-gray-300'
       }`}
       aria-label={`Product: ${product.name}`}
@@ -59,50 +59,54 @@ function ProductCard({ product }) {
       {/* Badge */}
       <Badge text={product.badge} />
 
-      {/* Product Image */}
+      {/* Product Image — Left Side */}
       <div
-        className="mb-5 flex items-center justify-center p-4"
-        style={{ height: '144px' }}
+        className="flex shrink-0 items-center justify-center p-5"
+        style={{ width: '140px' }}
       >
         <img
           src={displayImage}
           alt={product.name}
-          style={{ height: '112px', width: 'auto' }}
-          className="object-contain transition-transform duration-300 hover:scale-105"
+          className="h-[105px] w-auto object-contain"
           loading="lazy"
         />
       </div>
 
-      {/* Title & Description */}
-      <h3 className="text-[15px] font-semibold text-gray-900">
-        {product.name}
-      </h3>
-      <p className="mt-1.5 text-xs text-text-secondary leading-relaxed line-clamp-2 min-h-[2.5rem]">
-        {product.description}
-      </p>
+      {/* Content — Right Side */}
+      <div className="flex flex-1 flex-col justify-between py-5 pr-5 pl-1">
+        {/* Title & Description */}
+        <div>
+          <h3 className="text-[16px] font-bold text-gray-900">
+            {product.name}
+          </h3>
+          <p className="mt-1 text-[13px] text-gray-500 leading-relaxed">
+            {product.description}
+            {product.learnMoreUrl && (
+              <>
+                {'  '}
+                <a
+                  href={product.learnMoreUrl}
+                  className="font-semibold text-[#5c35e0] underline underline-offset-2 hover:text-[#4a28b8]"
+                  aria-label={`Learn more about ${product.name}`}
+                >
+                  Learn More
+                </a>
+              </>
+            )}
+          </p>
+        </div>
 
-      {/* Learn More */}
-      {product.learnMoreUrl && (
-        <a
-          href={product.learnMoreUrl}
-          className="mt-1.5 inline-block text-[13px] font-semibold text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
-          aria-label={`Learn more about ${product.name}`}
-        >
-          Learn More
-        </a>
-      )}
-
-      {/* Spacer to push bottom content down */}
-      <div className="mt-auto pt-5">
         {/* Variant Selector */}
-        <VariantSelector
-          variants={product.variants}
-          activeVariantId={activeVariant.id}
-          onSelect={handleVariantSelect}
-        />
+        <div className="mt-3">
+          <VariantSelector
+            variants={product.variants}
+            activeVariantId={activeVariant.id}
+            onSelect={handleVariantSelect}
+          />
+        </div>
 
         {/* Quantity + Price Row */}
-        <div className="mt-4 flex items-center justify-between gap-2">
+        <div className="mt-3 flex items-end justify-between gap-2">
           <QuantityStepper
             quantity={currentQuantity}
             onIncrement={handleIncrement}
@@ -110,17 +114,17 @@ function ProductCard({ product }) {
             ariaLabel={`${product.name} quantity`}
           />
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col items-end leading-[1.3]">
             {activeVariant.compareAtPrice && (
-              <span className="text-xs text-text-muted line-through">
+              <span className="text-[13px] text-[#dc2626] line-through font-medium">
                 {formatCurrency(activeVariant.compareAtPrice)}
               </span>
             )}
-            <span className="text-sm font-bold text-text-primary">
+            <span className="text-[16px] font-bold text-gray-800">
               {formatCurrency(activeVariant.price)}
             </span>
             {product.isMonthly && (
-              <span className="text-xs text-text-muted">/mo</span>
+              <span className="text-[11px] text-gray-500">/mo</span>
             )}
           </div>
         </div>

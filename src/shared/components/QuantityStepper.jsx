@@ -1,17 +1,10 @@
 import { memo, useCallback } from 'react';
-import { Minus, Plus } from 'lucide-react';
 
 /**
  * Reusable quantity stepper component.
  * Used in both ProductCard and ReviewLineItem.
  * Synchronized through BundleContext.
- *
- * @param {Object} props
- * @param {number} props.quantity - Current quantity
- * @param {Function} props.onIncrement - Called when + is pressed
- * @param {Function} props.onDecrement - Called when - is pressed
- * @param {string} [props.ariaLabel] - Accessible label for the stepper
- * @param {string} [props.size] - 'sm' | 'md' (default 'md')
+ * Matches Figma: — N + with rounded border container.
  */
 function QuantityStepper({
   quantity,
@@ -40,8 +33,8 @@ function QuantityStepper({
 
   return (
     <div
-      className={`inline-flex items-center rounded-lg border border-border ${
-        isSmall ? 'gap-1' : 'gap-2'
+      className={`inline-flex items-center rounded-lg border border-gray-300 ${
+        isSmall ? 'gap-0' : 'gap-0'
       }`}
       role="group"
       aria-label={ariaLabel}
@@ -50,21 +43,23 @@ function QuantityStepper({
         type="button"
         onClick={handleDecrement}
         disabled={quantity <= 0}
-        className={`flex items-center justify-center rounded-l-lg transition-colors ${
-          isSmall ? 'h-7 w-7' : 'h-8 w-8'
+        className={`flex items-center justify-center transition-colors ${
+          isSmall ? 'h-7 w-7' : 'h-9 w-9'
         } ${
           quantity <= 0
-            ? 'cursor-not-allowed text-text-muted'
-            : 'text-text-secondary hover:bg-gray-100 hover:text-text-primary'
+            ? 'cursor-not-allowed text-gray-300'
+            : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
         }`}
         aria-label={`Decrease ${ariaLabel}`}
       >
-        <Minus size={isSmall ? 12 : 14} />
+        <span className={`font-medium ${isSmall ? 'text-sm' : 'text-lg'}`}>
+          —
+        </span>
       </button>
 
       <span
-        className={`min-w-[20px] text-center font-semibold tabular-nums text-text-primary ${
-          isSmall ? 'text-xs' : 'text-sm'
+        className={`min-w-[24px] text-center font-semibold tabular-nums text-gray-900 ${
+          isSmall ? 'text-sm' : 'text-base'
         }`}
         aria-live="polite"
         aria-atomic="true"
@@ -75,12 +70,14 @@ function QuantityStepper({
       <button
         type="button"
         onClick={handleIncrement}
-        className={`flex items-center justify-center rounded-r-lg text-text-secondary transition-colors hover:bg-gray-100 hover:text-text-primary ${
-          isSmall ? 'h-7 w-7' : 'h-8 w-8'
+        className={`flex items-center justify-center text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 ${
+          isSmall ? 'h-7 w-7' : 'h-9 w-9'
         }`}
         aria-label={`Increase ${ariaLabel}`}
       >
-        <Plus size={isSmall ? 12 : 14} />
+        <span className={`font-medium ${isSmall ? 'text-sm' : 'text-lg'}`}>
+          +
+        </span>
       </button>
     </div>
   );

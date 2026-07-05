@@ -2,12 +2,8 @@ import { memo, useCallback } from 'react';
 
 /**
  * Variant selector: row of color chips for products with multiple variants.
- * Each variant owns its own quantity; switching only changes which one the stepper controls.
- *
- * @param {Object} props
- * @param {Array} props.variants - Array of variant objects
- * @param {string} props.activeVariantId - Currently selected variant ID
- * @param {Function} props.onSelect - Called with variantId when a chip is clicked
+ * Each variant shows a colored circle + text label.
+ * Selected variant has indigo border, unselected has gray border.
  */
 function VariantSelector({ variants, activeVariantId, onSelect }) {
   // Don't render if product has only one variant with no color
@@ -61,21 +57,41 @@ const VariantChip = memo(function VariantChip({ variant, isActive, onSelect }) {
       aria-label={`Color: ${variant.color}`}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium transition-all ${
+      className={`inline-flex items-center gap-2 rounded-md border px-2 py-1 text-[13px] font-medium transition-all ${
         isActive
-          ? 'border-primary bg-primary-light text-primary'
-          : 'border-border bg-white text-text-secondary hover:border-gray-400'
+          ? 'border-[#00A389] bg-[#e6f7f1] text-gray-900 shadow-sm'
+          : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
       }`}
+      style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
     >
-      <span
-        className={`inline-block h-3 w-3 rounded-full border ${
-          variant.swatch === '#FFFFFF'
-            ? 'border-gray-300'
-            : 'border-transparent'
-        }`}
-        style={{ backgroundColor: variant.swatch }}
-        aria-hidden="true"
-      />
+      {variant.image ? (
+        <img
+          src={variant.image}
+          alt=""
+          style={{
+            height: '20px',
+            width: 'auto',
+            objectFit: 'contain',
+            flexShrink: 0,
+          }}
+          aria-hidden="true"
+        />
+      ) : (
+        <span
+          className={`inline-block rounded-full border ${
+            variant.swatch === '#FFFFFF'
+              ? 'border-gray-300'
+              : 'border-transparent'
+          }`}
+          style={{
+            backgroundColor: variant.swatch,
+            width: '16px',
+            height: '16px',
+            flexShrink: 0,
+          }}
+          aria-hidden="true"
+        />
+      )}
       {variant.color}
     </button>
   );

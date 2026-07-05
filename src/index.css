@@ -12,11 +12,15 @@
   --color-text-muted: #9ca3af;
   --color-border: #e5e7eb;
   --color-border-selected: #5c35e0;
-  --color-badge-bg: #dbeafe;
-  --color-badge-text: #1e40af;
+  --color-badge-bg: #16a34a;
+  --color-badge-text: #ffffff;
   --color-success: #059669;
   --color-danger: #dc2626;
   --color-dark: #1a1a2e;
+  --color-accent-blue: #4f46e5;
+  --color-panel-bg: #f8f8fa;
+  --color-step-bg: #eef1f8;
+  --color-price-strike: #dc2626;
 
   /* Font family */
   --font-sans: 'Inter', sans-serif;
@@ -74,4 +78,100 @@ a {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Starburst guarantee badge */
+.starburst {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background: #5c35e0;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  filter: drop-shadow(0 2px 8px rgba(92, 53, 224, 0.3));
+}
+
+.starburst::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  background: #5c35e0;
+  border-radius: 50%;
+  z-index: -1;
+  clip-path: polygon(
+    50% 0%,
+    61% 5%,
+    71% 2%,
+    78% 10%,
+    88% 12%,
+    91% 22%,
+    98% 29%,
+    97% 40%,
+    100% 50%,
+    97% 60%,
+    98% 71%,
+    91% 78%,
+    88% 88%,
+    78% 90%,
+    71% 98%,
+    61% 95%,
+    50% 100%,
+    39% 95%,
+    29% 98%,
+    22% 90%,
+    12% 88%,
+    9% 78%,
+    2% 71%,
+    3% 60%,
+    0% 50%,
+    3% 40%,
+    2% 29%,
+    9% 22%,
+    12% 12%,
+    22% 10%,
+    29% 2%,
+    39% 5%
+  );
+}
+
+.starburst-text-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: none;
+}
+
+/* Grid transition for accordion */
+.accordion-content {
+  display: grid;
+  transition:
+    grid-template-rows 300ms ease-in-out,
+    opacity 300ms ease-in-out;
+}
+
+.accordion-content[data-open='true'] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.accordion-content[data-open='false'] {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+/* Price strikethrough in red */
+.price-compare {
+  text-decoration: line-through;
+  color: #dc2626;
+}
+
+/* Review panel line item name - no variant suffix in review panel display names */
+.review-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
